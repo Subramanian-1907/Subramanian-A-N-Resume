@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - Subramanian A N</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="container detail-page contact-container">
+  <div class="card-container">
+    <a href="index.html" class="back-link" aria-label="Back to Home">← Back to Home</a>
+    <h1>Contact Me</h1>
+    <p class="contact-intro">I’d love to hear from you! Please fill out the form below or reach out directly via email or phone.</p>
+
+    <form class="contact-form" action="mailto:subramanian19an@gmail.com" method="POST" enctype="text/plain" novalidate>
+      <div class="form-group">
+        <input type="text" id="name" name="Name" placeholder=" " required />
+        <label for="name">Your Name</label>
+        <span class="error">Please enter your name.</span>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" name="Email" placeholder=" " required />
+        <label for="email">Your Email</label>
+        <span class="error">Please enter a valid email.</span>
+      </div>
+      <div class="form-group">
+        <textarea id="message" name="Message" rows="5" placeholder=" " required></textarea>
+        <label for="message">Your Message</label>
+        <span class="error">Please enter your message.</span>
+      </div>
+      <button type="submit" class="btn-submit">Send Message</button>
+    </form>
+
+<section class="direct-contact" aria-label="Contact information">
+  <h2>Or reach me at</h2>
+  <p style="display:flex; align-items:center; gap:10px; font-size:1.1rem;">
+    <!-- Email icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24" aria-hidden="true" focusable="false">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12h.01M12 12h.01M8 12h.01m8-7H8a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2z" />
+    </svg>
+    <a href="mailto:subramanian19an@gmail.com" style="color: #2563eb; text-decoration:none; font-weight:600;">
+      subramanian19an@gmail.com
+    </a>
+  </p>
+
+  <p style="display:flex; align-items:center; gap:10px; font-size:1.1rem;">
+    <!-- Phone icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24" aria-hidden="true" focusable="false">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h1l2 3 3-2-1-2 4-4 3 3-2 1 3 2h1" />
+    </svg>
+    <a href="tel:+919629718214" style="color: #2563eb; text-decoration:none; font-weight:600;">
+      (+91) 9629718214
+    </a>
+  </p>
+
+  <p style="display:flex; align-items:center; gap:10px; font-size:1.1rem;">
+    <!-- Location icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24" aria-hidden="true" focusable="false">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5 9 6.343 9 8s1.343 3 3 3z" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22s8-4.5 8-10.5S15.523 2 12 2 4 7.5 4 11.5 12 22 12 22z" />
+    </svg>
+    <span style="font-weight:600; color:#374151;">Chennai, INDIA</span>
+  </p>
+</section>
+  </div>
+</main>
+
+<button id="back-to-top" title="Back to top" aria-label="Scroll back to top">↑</button>
+
+<script src="script.js"></script>
+
+<script>
+  // Floating label effect and validation
+  document.querySelectorAll('.contact-form input, .contact-form textarea').forEach(input => {
+    input.addEventListener('focus', () => input.parentNode.classList.add('focused'));
+    input.addEventListener('blur', () => {
+      if (!input.value.trim()) input.parentNode.classList.remove('focused');
+    });
+  });
+
+  const form = document.querySelector('.contact-form');
+  form.addEventListener('submit', e => {
+    let valid = true;
+    form.querySelectorAll('input, textarea').forEach(input => {
+      if (!input.checkValidity()) {
+        valid = false;
+        input.parentNode.classList.add('error-visible');
+      } else {
+        input.parentNode.classList.remove('error-visible');
+      }
+    });
+    if (!valid) e.preventDefault();
+  });
+</script>
+</body>
+</html>

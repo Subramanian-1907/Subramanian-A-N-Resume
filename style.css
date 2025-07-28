@@ -1,0 +1,414 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@600;700&display=swap');
+
+/* ----- Reset & base styles ----- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  height: 100%;
+  background-color: #f4f6fb;
+  font-family: 'Inter', sans-serif;
+  color: #2e3a59; /* Dark Slate Blue */
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* ----- Navbar ----- */
+nav.navbar {
+  background-color: #243669;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+nav.navbar ul {
+  margin: 0;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+nav.navbar ul li a {
+  color: #cbd5e1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+nav.navbar ul li a:hover,
+nav.navbar ul li a.active {
+  background-color: #f8ca3c;
+  color: #1a202c;
+  text-decoration: none;
+}
+
+/* ----- Card container for content ----- */
+.card-container {
+  background-color: #ffffff;
+  max-width: 700px;
+  margin: 48px auto 96px auto;
+  padding: 48px 44px;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(248, 202, 60, 0.18);
+  user-select: none;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease;
+}
+.card-container:hover {
+  box-shadow: 0 22px 60px rgba(248, 202, 60, 0.32);
+}
+
+/* ----- Main container ----- */
+.container {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+/* ====== CORRECTED MAIN PAGE VERTICAL CENTERING ====== */
+.container.main-page {
+  flex-grow: 1;
+  min-height: calc(100vh - 65px); /* navbar height */
+  display: flex;
+  flex-direction: column;  /* Added this for vertical stacking */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;      /* Added padding for breathing room */
+  box-sizing: border-box;
+}
+
+/* ----- Name on main page ----- */
+.main-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 4.4rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #243669;
+  margin: 0 0 24px 0;       /* Adjusted margin-bottom */
+  line-height: 1.1;         /* Added for better vertical spacing */
+}
+
+/* ----- Summary on main page ----- */
+.summary-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.35rem;
+  max-width: 660px;
+  color: #475569;
+  font-weight: 500;
+  line-height: 1.8;
+  margin: 0 auto;
+  padding: 0 10px;          /* Added horizontal padding for small screens */
+  user-select: text;
+}
+
+/* ----- Detail page container ----- */
+.container.detail-page {
+  max-width: 700px;
+  margin: 80px auto 110px;
+  padding: 0 28px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* ----- Headings ----- */
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.85rem;
+  font-weight: 700;
+  margin-bottom: 36px;
+  color: #243669;
+}
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #2f365f;
+  border-bottom: 3px solid #f8ca3c;
+  padding-bottom: 8px;
+  margin-top: 40px;
+  margin-bottom: 24px;
+}
+
+/* ----- Job info & Em text ----- */
+.job-info,
+em {
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 18px;
+  display: block;
+}
+
+/* ----- Paragraphs & Lists ----- */
+p,
+ul {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #4b5563;
+  margin-bottom: 28px;
+}
+ul {
+  padding-left: 24px;
+}
+ul ul {
+  list-style-type: circle;
+  margin-left: 28px;
+}
+
+/* ----- Back link ----- */
+.back-link {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #243669;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px;
+  margin-bottom: 36px;
+  display: inline-block;
+  user-select: none;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+.back-link:hover,
+.back-link:focus {
+  border-color: #f8ca3c;
+  color: #171923;
+  outline: none;
+}
+
+/* ----- Back to top button ----- */
+#back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background-color: #f8ca3c;
+  color: #1a202c;
+  border: none;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(248, 202, 60, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+#back-to-top:hover,
+#back-to-top:focus {
+  background-color: #eab308;
+  color: #111927;
+  transform: scale(1.1);
+  outline: none;
+}
+
+/* ----- Contact form and container ----- */
+.contact-container {
+  max-width: 600px;
+  margin: auto;
+}
+.contact-intro {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #54668d;
+  line-height: 1.8;
+  user-select: text;
+}
+
+/* ----- Contact Form Styles ----- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.form-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input,
+.form-group textarea {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  padding: 16px 16px 16px 16px;
+  border-radius: 10px;
+  border: 2px solid #cbd5e1;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: #f9fafb;
+  min-height: 52px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.form-group textarea {
+  min-height: 140px;
+  padding-top: 16px;
+}
+
+.form-group label {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 1.1rem;
+  color: #8a9bb8;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  background: #fff;
+  padding: 0 6px;
+}
+
+.form-group.focused label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -8px;
+  left: 12px;
+  font-size: 0.85rem;
+  color: #f8ca3c;
+  font-weight: 700;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #f8ca3c;
+  box-shadow: 0 0 8px rgba(248, 202, 60, 0.5);
+  background: #fff;
+}
+
+.error {
+  font-size: 0.9rem;
+  color: #ef4444;
+  margin-top: 8px;
+  display: none;
+}
+
+.form-group.error-visible .error {
+  display: block;
+}
+
+.btn-submit {
+  align-self: flex-start;
+  background-color: #f8ca3c;
+  color: #1a202c;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 16px 44px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-submit:hover,
+.btn-submit:focus {
+  background-color: #eab308;
+  outline: none;
+  color: #111927;
+}
+
+/* ----- Direct contact info ----- */
+.direct-contact {
+  margin-top: 52px;
+  font-size: 1.05rem;
+  color: #4b5563;
+  font-family: 'Inter', sans-serif;
+}
+
+.direct-contact h2 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+}
+
+.direct-contact p {
+  margin: 8px 0;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 700px) {
+  .container,
+  .contact-container {
+    max-width: 95vw;
+    margin: 40px auto 60px;
+    padding: 0 24px;
+  }
+  .container.main-page {
+    min-height: auto;
+    padding: 30px 16px;
+  }
+  .main-name {
+    font-size: 3rem;
+    margin-bottom: 18px;
+  }
+  .summary-text {
+    font-size: 1.1rem;
+    max-width: 100%;
+    padding: 0 6px;
+  }
+  nav.navbar ul {
+    gap: 24px;
+    padding: 12px 16px;
+  }
+  nav.navbar ul li a {
+    font-size: 1.05rem;
+    padding: 8px 12px;
+  }
+  h1 {
+    font-size: 2.25rem;
+    margin-bottom: 28px;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  .form-group input,
+  .form-group textarea {
+    font-size: 1rem;
+  }
+  .form-group label {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 400px) {
+  .main-name {
+    font-size: 2.4rem;
+  }
+  .container,
+  .contact-container {
+    padding: 30px 16px 50px;
+  }
+  .btn-submit {
+    width: 100%;
+    padding: 16px 0;
+  }
+}
