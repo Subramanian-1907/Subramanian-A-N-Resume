@@ -92,7 +92,7 @@ nav.navbar ul li a.active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: Justify;
   padding: 40px 12px;
   box-sizing: border-box;
 }
@@ -108,6 +108,7 @@ nav.navbar ul li a.active {
   line-height: 1.1;
   word-break: break-word;
   overflow-wrap: break-word;
+  text-align: Center;
 }
 
 @media (max-width: 700px) {
@@ -452,3 +453,4 @@ ul ul {
     margin: 12px auto 22px auto;
   }
 }
+
