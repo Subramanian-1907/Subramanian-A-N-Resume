@@ -92,7 +92,7 @@ nav.navbar ul li a.active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align:Justify;
+  text-align:left;
   padding: 40px 12px;
   box-sizing: border-box;
 }
@@ -453,6 +453,7 @@ ul ul {
     margin: 12px auto 22px auto;
   }
 }
+
 
 
 
